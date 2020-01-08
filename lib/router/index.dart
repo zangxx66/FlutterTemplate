@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:Ricardo/views/Login/index.dart';
 import 'package:Ricardo/views/Home/index.dart';
-import 'package:Ricardo/views/Operation/index.dart';
+import 'package:Ricardo/views/ListView/index.dart';
+import 'package:Ricardo/views/SplanshScreen/index.dart';
 
 // Route separation
 final Map<String, WidgetBuilder> routes = {
   "/":(context) => Home(),
+  "/startup":(context) => SplanshScreen(),
   "/login":(context) => Login(),
-  "/operation":(context) => Operation()
+  "/listview":(context) => ListViewPage()
 };
 
 final onGenerateRoute = (RouteSettings settings) {
@@ -15,7 +17,7 @@ final onGenerateRoute = (RouteSettings settings) {
   var builder = routes[name];
 
   if(builder == null){
-    builder = (context) => UnknowPage();
+    builder = (context) => throw Exception('Invalid route: ${settings.name}');
   }
 
   final route = MaterialPageRoute(
@@ -25,17 +27,3 @@ final onGenerateRoute = (RouteSettings settings) {
 
   return route;
 };
-
-class UnknowPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Error"),
-      ),
-      body: Center(
-        child: Text("404 Not Found!"),
-      ),
-    );
-  }
-}

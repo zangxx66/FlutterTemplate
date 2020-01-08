@@ -15,11 +15,14 @@ class _DrawerState extends State<DrawerState> {
       child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text("Nickname"),
-              decoration: BoxDecoration(
-                color: Theme.of(context).cursorColor
-              ),
+            new UserAccountsDrawerHeader(
+              accountName: new Text('Ricardo'),
+                   accountEmail: new Text('thespirit@vip.qq.com'),
+                   currentAccountPicture: new CircleAvatar(
+                     backgroundColor: Colors.black26,
+                     child: new Text('R'),
+                   ),
+                   decoration: new BoxDecoration(color: Theme.of(context).accentColor),
             ),
             ListTile(
               title: Text("Home"),
@@ -28,9 +31,9 @@ class _DrawerState extends State<DrawerState> {
               },
             ),
             ListTile(
-              title:Text("Operation"),
+              title:Text("ListView"),
               onTap:() {
-                Navigator.of(context).pushReplacementNamed("/operation");
+                Navigator.of(context).pushReplacementNamed("/listview");
               }
             ),
             ListTile(

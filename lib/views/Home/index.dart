@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Ricardo/widget/Drawer/index.dart';
+import 'package:Ricardo/widget/ExitDialog/index.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -20,9 +21,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(title: Text("Home")),
       drawer: DrawerState(),
-      body: Center(
-      child: Text("hello world!"),
-    ));
+      body: ExitDialog(
+        Scaffold(
+          body: Center(
+            child: Text("hello world!"),
+          ),
+        )
+      )
+      );
   }
 }
 

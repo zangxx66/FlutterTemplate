@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primaryColor: Colors.pink,
-        accentColor: Colors.pinkAccent
+        accentColor: Colors.pinkAccent,
       ),
-      initialRoute: "/login",
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/startup",
       onGenerateRoute: onGenerateRoute,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:Ricardo/widget/ExitDialog/index.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -19,7 +20,9 @@ class _LoginState extends State<Login> {
     // than having to individually change instances of widgets.
     return Scaffold(
         appBar: AppBar(title: Text("Login"), automaticallyImplyLeading: false),
-        body: TextForm());
+        body: ExitDialog(Scaffold(
+          body: TextForm(),
+        )));
   }
 }
 
@@ -67,7 +70,7 @@ class TextFormState extends State<TextForm> {
     } else {
       form.save();
       // do something
-      // 
+      //
       Navigator.pushReplacementNamed(context, "/");
     }
   }
