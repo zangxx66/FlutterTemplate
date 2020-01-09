@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.pink,
         accentColor: Colors.pinkAccent,
       ),
-      debugShowCheckedModeBanner: false,
       initialRoute: "/startup",
       onGenerateRoute: onGenerateRoute,
     );

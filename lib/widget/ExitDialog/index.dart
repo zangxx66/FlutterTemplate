@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ExitDialog extends StatefulWidget {
   Scaffold _scaffold;
@@ -21,7 +22,7 @@ class _ExitDialog extends State<ExitDialog> {
   Future<bool> _onBackPressed() {
     int nowTime = new DateTime.now().microsecondsSinceEpoch;
     if (_lastClickTime != 0 && nowTime - _lastClickTime > 1500) {
-      return new Future.value(true);
+      return SystemChannels.platform.invokeMethod("SystemNavigator.pop");
     } else {
       Scaffold.of(context)
           .showSnackBar(SnackBar(content: Text('Click again to exist!.')));

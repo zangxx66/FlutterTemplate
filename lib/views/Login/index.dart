@@ -66,7 +66,6 @@ class TextFormState extends State<TextForm> {
     final form = _formKey.currentState;
     if (!form.validate()) {
       _autoValidate = true;
-      showInSnackBar("Oops!");
     } else {
       form.save();
       // do something

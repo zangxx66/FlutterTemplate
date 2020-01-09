@@ -37,6 +37,12 @@ class _DrawerState extends State<DrawerState> {
               }
             ),
             ListTile(
+              title: Text("Form"),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed("/form");
+              },
+            ),
+            ListTile(
               title:Text("Exit"),
               onTap: (){
                 //do something
